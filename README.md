@@ -1,6 +1,6 @@
 "# PRUEBA01 - DISTRIBUIDA 2019-06-01"  
 
-EJB REMOTE 
+EJB REMOTE - JMS
 
 Carpeta pd es al cliente
 
