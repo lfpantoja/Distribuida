@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'org.gretty:gretty:+'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'eclipse-wtp'
+    id 'war'
+}
+apply plugin: 'war'
+apply plugin: 'org.gretty'
+
+group 'com.distribuida'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile group: 'javax.jms', name: 'javax.jms-api', version: '2.0.1'
+    compile group: 'org.apache.activemq', name: 'artemis-jms-client', version: '2.6.3'
+
+    compile group: 'org.springframework', name: 'spring-context', version: '5.0.9.RELEASE'
+    compile group: 'org.springframework', name: 'spring-web', version: '5.0.9.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '5.0.9.RELEASE'
+    compile group: 'org.springframework', name: 'spring-jms', version: '5.0.9.RELEASE'
+}
+
+gretty {
+    httpPort = 8080
+}
