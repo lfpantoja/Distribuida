@@ -1,0 +1,35 @@
+plugins {
+    id 'java-library'
+    id 'war'
+    id 'eclipse-wtp'
+}
+
+ext {
+
+    springVersion = '5.1.8.RELEASE'
+    jacksonVersion = '2.9.9'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+
+    compile group: 'org.springframework',name: 'spring-context', version: "${springVersion}"
+    compile group: 'org.springframework',name: 'spring-web', version: "${springVersion}"
+    compile group: 'org.springframework',name: 'spring-webmvc', version: "${springVersion}"
+
+    compile "javax.servlet:javax.servlet-api:3.1.0"
+
+    compile group: 'javax.xml.ws', name: 'jaxws-api', version: '2.3.1'
+
+    compile group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider', version: "${jacksonVersion}"
+
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.26'
+    
+}
